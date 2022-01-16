@@ -18,6 +18,7 @@ import { Transfer } from "./Transfer";
 import { TransactionErrorMessage } from "./TransactionErrorMessage";
 import { WaitingForTransactionMessage } from "./WaitingForTransactionMessage";
 import { NoTokensMessage } from "./NoTokensMessage";
+import { Tickets } from './new_components/tickets';
 
 // This is the Hardhat Network id, you might change it in the hardhat.config.js
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
@@ -54,6 +55,9 @@ const BDapp = () => {
 
     const [tokenE, setTokenE] = useState(undefined);
     const [pollDataInterval, setPDI] = useState(undefined);
+
+    // fake data recieved from db - init: undefined
+    const [userTickets, setUserTickets] = useState([{title: 'Thrilling Event starring Ben', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", url: 'https://www.w3schools.com/'}, {title: 'Stadia Ipsum featuring John', desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", url: 'https://code.org/learn'}]);
 
     useEffect(() => {
 
@@ -304,6 +308,29 @@ const BDapp = () => {
     }
 
     // If everything is loaded, we render the application.
+    if (true) {
+        return(
+
+            <div>
+
+                <div>
+
+                    <div>logo</div>
+                    <div>burger</div>
+
+                </div>
+
+                <div>
+
+                    <div>new events (based on hype, search bar inc.)</div>
+                    <div>{/* <Tickets tickets={userTickets} /> */}</div>
+
+                </div>
+
+            </div>
+
+        )
+    } else {
     return (
 
         <div className="container p-4">
@@ -376,6 +403,7 @@ const BDapp = () => {
         </div>
 
     );
+    }
 
 }
 
