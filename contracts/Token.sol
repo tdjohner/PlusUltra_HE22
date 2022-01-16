@@ -2,23 +2,24 @@
 
 // Solidity files have to start with this pragma.
 // It will be used by the Solidity compiler to validate its version.
-pragma solidity ^0.7.0;
+pragma solidity >=0.8.0;
 
 // We import this library to be able to use console.log
 import "hardhat/console.sol";
+import "./ownable.sol";
+import "./erc721.sol";
 
 
 // This is the main building block for smart contracts.
-contract Token {
+contract Token is Ownable, ERC721 {
     // Some string type variables to identify the token.
-    string public name = "My Hardhat Token";
-    string public symbol = "MHT";
+    string public name = "Ticket Decentral";
+    string public symbol = "TDCT";
+    string public authors = "Teagan, Benji, McKenzy";
 
     // The fixed amount of tokens stored in an unsigned integer type variable.
     uint256 public totalSupply = 1000000;
 
-    // An address type variable is used to store ethereum accounts.
-    address public owner;
 
     // A mapping is a key/value map. Here we store each account balance.
     mapping(address => uint256) balances;
@@ -33,7 +34,6 @@ contract Token {
         // The totalSupply is assigned to transaction sender, which is the account
         // that is deploying the contract.
         balances[msg.sender] = totalSupply;
-        owner = msg.sender;
     }
 
     /**
@@ -70,4 +70,27 @@ contract Token {
     function balanceOf(address account) external view returns (uint256) {
         return balances[account];
     }
+
+    /**
+     *  
+     */
+    function approve(address _approved, uint256 _tokenId) external payable {
+        
+    }
+
+    /**
+     *  
+     */
+    function transferFrom(address _from, address _to, uint256 _tokenId) external payable {
+
+    }
+
+    /**
+     *  
+     */
+    function ownerOf(uint256 _tokenId) external view returns (address) {
+        address box;
+        return box;
+    }
+
 }
