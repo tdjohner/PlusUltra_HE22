@@ -311,19 +311,19 @@ const BDapp = () => {
     if (true) {
         return(
 
-            <div>
+            <div className="ticket-page">
 
-                <div>
+                <div className="nav">
 
                     <div>logo</div>
                     <div>burger</div>
 
                 </div>
 
-                <div>
+                <div className="main">
 
                     <div>new events (based on hype, search bar inc.)</div>
-                    <div>{/* <Tickets tickets={userTickets} /> */}</div>
+                    <div><Tickets tickets={userTickets} /></div>
 
                 </div>
 
