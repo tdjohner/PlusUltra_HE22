@@ -315,14 +315,14 @@ const BDapp = () => {
 
                 <div className="nav">
 
-                    <div>logo</div>
-                    <div>burger</div>
+                    <div className="unselect">ticket.decentral<span className="sub unselect">own your events</span></div>
+                    <div></div>
 
                 </div>
 
                 <div className="main">
 
-                    <div>new events (based on hype, search bar inc.)</div>
+                    <div className="hype">new events (based on hype, search bar inc.)</div>
                     <div><Tickets tickets={userTickets} /></div>
 
                 </div>
